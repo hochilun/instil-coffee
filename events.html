@@ -5,6 +5,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Event card (detailed) ── */
+    .event-card {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .event-card:first-child { padding-top: 0; }
+
+    .event-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-date-display {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gray-200);
+      flex-shrink: 0;
+    }
+
+    .event-date-display span {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      font-weight: 300;
+      margin-top: 0.2rem;
+    }
+
+    .event-tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      border: 1px solid var(--gray-200);
+      padding: 3px 8px;
+    }
+
+    .event-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .event-partners {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-intro {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: var(--gray-600);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    /* Courses grid */
+    .event-courses {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .course-item {
+      background: var(--gray-50);
+      padding: 1.5rem;
+    }
+
+    .course-num {
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.5rem;
+    }
+
+    .course-title {
+      font-size: 0.88rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+      line-height: 1.4;
+    }
+
+    .course-bean {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+    }
+
+    .course-desc {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .event-closing {
+      font-size: 0.83rem;
+      line-height: 1.85;
+      color: var(--gray-600);
+      max-width: 680px;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .event-courses { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -39,23 +160,83 @@
   <main>
     <section>
       <div class="container">
-        <span class="label" data-i18n="events-upcoming-label">Upcoming</span>
-        <div class="event-list">
-          <!-- Add events here using this format:
-          <div class="event-item">
-            <div class="event-date-block">15<span class="month">Jun</span></div>
-            <div class="event-body">
-              <h2 class="event-body-title">Event Title</h2>
-              <p class="event-body-desc">Description</p>
-            </div>
+
+        <!-- ── Upcoming ─────────────────────────── -->
+        <div style="margin-bottom: 4rem;">
+          <span class="label" data-i18n="events-upcoming-label">Upcoming</span>
+          <div style="padding: 2rem 0; border-bottom: 1px solid var(--gray-100);">
+            <p style="font-size:0.85rem;color:var(--gray-400);" data-i18n="events-empty-text">Follow our Instagram for the latest events and announcements.</p>
+            <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" class="text-link" style="margin-top:1rem;display:inline-flex;" data-i18n="events-ig-link">@instilcoffee →</a>
           </div>
-          -->
         </div>
-        <div class="events-empty">
-          <p style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--gray-200);margin-bottom:1rem;" data-i18n="events-empty-title">Stay tuned.</p>
-          <p data-i18n="events-empty-text">Follow our Instagram for the latest events and announcements.</p>
-          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" class="text-link" style="margin-top:1.5rem;display:inline-flex;" data-i18n="events-ig-link">@instilcoffee →</a>
+
+        <!-- ── Past Events ────────────────────────── -->
+        <div>
+          <span class="label" data-i18n="events-past-label">Past Events</span>
+
+          <!-- March 2025 — Breakfast Project -->
+          <div class="event-card">
+            <div class="event-meta">
+              <div class="event-date-display">
+                03
+                <span>2025</span>
+              </div>
+              <span class="event-tag" data-i18n="events-tag-collab">Collaboration</span>
+            </div>
+
+            <h2 class="event-title">早餐計劃 Breakfast Project</h2>
+            <p class="event-partners">
+              Instil Coffee ✕ <a href="https://www.instagram.com/lilinli_tw" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--gray-200);">@lilinli_tw</a>
+              ✕ <a href="https://www.instagram.com/wildsolidsourdough.tw" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--gray-200);">@wildsolidsourdough.tw</a>
+            </p>
+
+            <p class="event-intro">
+              去年底接到 @lilinli_tw 早餐計劃的邀請，讓團隊既興奮又焦慮。這次是三方品牌合作，考驗著大家的創造力及團隊合作。主要是搭配餐食出杯，使用了四種萃取方式及不同的豆子。考慮到來用餐的客人不一定能喝咖啡，所以只出一款大家熟知樣貌的咖啡作為開場，其餘都是入菜及咖啡特調。
+            </p>
+
+            <div class="event-courses">
+
+              <div class="course-item">
+                <p class="course-num">Course 01</p>
+                <p class="course-title">Welcome Drink</p>
+                <p class="course-bean">Ethiopia Mewa · Washed · Cold Brew</p>
+                <p class="course-desc">透過低溫浸泡萃取，保有乾淨度也不失 body 厚度。過濾後第一至第二天香氣表現最佳。</p>
+              </div>
+
+              <div class="course-item">
+                <p class="course-num">Course 02</p>
+                <p class="course-title">沙拉咖啡泡沫</p>
+                <p class="course-bean">Ethiopia Wate · Anaerobic Natural · Pour Over</p>
+                <p class="course-desc">水粉比濃度稍高，利用厭氧製程產生的熱帶水果及發酵風味為沙拉提供鮮味，以泡沫方式呈現放大香氣。</p>
+              </div>
+
+              <div class="course-item">
+                <p class="course-num">Course 03</p>
+                <p class="course-title">通寧茉莉東方美人咖啡</p>
+                <p class="course-bean">Ethiopia Mewa · Washed · Espresso + N₂O</p>
+                <p class="course-desc">義式咖啡為基底，打入 N₂O 製作上層咖啡泡沫放大花香，下層以通寧氣泡水浸泡東方美人茶，帶有茶香與些微奎寧，入口清爽。</p>
+              </div>
+
+              <div class="course-item">
+                <p class="course-num">Course 04</p>
+                <p class="course-title">咖啡奶凍</p>
+                <p class="course-bean">Honduras Pantanal · Natural · Milk Brew</p>
+                <p class="course-desc">以鮮奶浸泡咖啡粉的 Milk Brew 方式製作，減少水分佔比，呈現更強烈的風味表現。</p>
+              </div>
+
+            </div>
+
+            <p class="event-closing">
+              感謝 @wisechen_lilin 和 Sylvia 的邀請與照顧，兩位創意無限，透過食材將三個品牌完美連結在一起。感謝 @wildsolidsourdough.tw Sunny 和 Ryan 四天備料期間的合作，有相同執著和藝術家性格的人，果然會互相吸引。也希望所有參與這場餐會的來賓都滿意。
+            </p>
+
+            <a href="https://www.instagram.com/p/DHsPxMPzI1W/" target="_blank" rel="noopener" class="text-link" style="margin-top:1.5rem;display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
+          </div>
+
+          <!-- Add more past events above this comment as needed -->
+
         </div>
+
       </div>
     </section>
   </main>
@@ -63,7 +244,7 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">Instil Coffee</div>
+        <div class="footer-logo">INSTIL</div>
         <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
       </div>
       <div>
