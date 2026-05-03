@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instil Coffee 活動 — 品飲會、新豆發布、咖啡講座。">
+  <title>Events — Instil Coffee</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="index.html">Instil</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="location.html">Location</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="開啟選單">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="container">
+      <span class="label">Instil Coffee</span>
+      <h1 class="page-header-title">Events</h1>
+    </div>
+  </header>
+
+  <!-- EVENTS LIST -->
+  <main>
+    <section>
+      <div class="container">
+        <span class="label">Upcoming</span>
+
+        <!-- 活動列表 — 每次有活動時新增一個 .event-item -->
+        <div class="event-list">
+
+          <!--
+            活動範例格式（複製此區塊新增活動）：
+            <div class="event-item">
+              <div class="event-date-block">
+                15
+                <span class="month">Jun</span>
+              </div>
+              <div class="event-body">
+                <h2 class="event-body-title">活動名稱</h2>
+                <p class="event-body-desc">活動描述文字，說明活動內容、時間、費用、報名方式等。</p>
+              </div>
+            </div>
+          -->
+
+        </div>
+
+        <!-- 目前沒有活動時顯示 -->
+        <div class="events-empty">
+          <p style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--gray-200); margin-bottom: 1rem;">
+            Stay tuned.
+          </p>
+          <p>近期活動資訊，敬請關注我們的 Instagram。</p>
+          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" class="text-link" style="margin-top: 1.5rem; display: inline-flex;">
+            @instilcoffee →
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Instil Coffee</div>
+        <p class="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+      </div>
+      <div>
+        <span class="footer-col-label">Navigate</span>
+        <ul class="footer-col-links">
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="location.html">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-label">Follow</span>
+        <p class="footer-col-text">
+          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener"
+            style="color: var(--gray-400); border-bottom: 1px solid #333; padding-bottom: 2px;">@instilcoffee</a>
+        </p>
+        <div style="margin-top: 2rem;">
+          <span class="footer-col-label">Visit</span>
+          <p class="footer-col-text">台北市大同區<br>承德路一段 77 巷 25 號 1 樓</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Instil Coffee. All rights reserved.</span>
+      <span>Taiwan · Taipei · Zhongshan</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
