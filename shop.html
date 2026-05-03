@@ -6,44 +6,112 @@
   <title>Shop — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
+    .shop-section { padding: var(--section-py) var(--px); }
+    .shop-section + .shop-section { padding-top: 0; }
+
     .shop-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-      margin-top: 3rem;
+      gap: 2.5rem 2rem;
+      margin-top: 2.5rem;
     }
-    .product-item { display: flex; flex-direction: column; gap: 1rem; }
-    .product-img {
+
+    .product-card { display: flex; flex-direction: column; }
+
+    .product-img-wrap {
       width: 100%;
       aspect-ratio: 1;
       overflow: hidden;
+      background: var(--gray-100);
+      margin-bottom: 1rem;
     }
-    .product-img-inner {
+
+    .product-img-wrap img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       transition: transform 0.6s var(--ease);
     }
-    .product-item:hover .product-img-inner { transform: scale(1.04); }
-    .product-info {}
-    .product-category {
+
+    .product-card:hover .product-img-wrap img { transform: scale(1.04); }
+
+    .product-origin {
       font-size: 0.6rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--gray-400);
-      margin-bottom: 0.4rem;
-      display: block;
+      margin-bottom: 0.35rem;
     }
-    .product-name { font-size: 0.9rem; font-weight: 400; margin-bottom: 0.25rem; }
-    .product-desc { font-size: 0.78rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 0.5rem; }
-    .product-price { font-size: 0.85rem; color: var(--gray-800); }
-    .product-note {
+
+    .product-name {
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.01em;
+    }
+
+    .product-process {
       font-size: 0.72rem;
       color: var(--gray-400);
-      letter-spacing: 0.06em;
-      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
     }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-size: 0.85rem;
+      color: var(--black);
+      font-weight: 300;
+    }
+
+    .product-price small {
+      font-size: 0.68rem;
+      color: var(--gray-400);
+      margin-left: 0.25rem;
+    }
+
+    .product-buy {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .product-buy:hover { color: var(--black); border-color: var(--black); }
+
+    .shop-divider {
+      border: none;
+      border-top: 1px solid var(--gray-100);
+      margin: 0 var(--px);
+    }
+
+    .shop-external-note {
+      text-align: center;
+      padding: 3rem var(--px) var(--section-py);
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+    }
+
+    .shop-external-note a {
+      color: var(--black);
+      border-bottom: 1px solid var(--gray-200);
+      padding-bottom: 1px;
+    }
+
     @media (max-width: 900px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .shop-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 480px)  { .shop-grid { grid-template-columns: 1fr; gap: 2rem; } }
   </style>
 </head>
 <body>
@@ -77,101 +145,196 @@
   </header>
 
   <main>
-    <section>
+
+    <!-- ── Coffee Beans ─────────────────────────── -->
+    <section class="shop-section">
       <div class="container">
+        <span class="label" data-i18n="shop-cat-beans-label">Coffee Beans</span>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-beans-title">Single Origin Beans</h2>
 
-        <!-- ── Beans ───────────────────────────────────────── -->
-        <div style="margin-bottom:clamp(48px,8vw,96px);">
-          <span class="label" data-i18n="shop-cat-beans-label">Coffee Beans</span>
-          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-beans-title">Single Origin Beans</h2>
-          <div class="shop-grid">
+        <div class="shop-grid">
 
-            <!--
-              Product card template — duplicate and fill in when you have data:
-
-              <div class="product-item">
-                <div class="product-img">
-                  <div class="product-img-inner img-ph"></div>
-                  ↑ Replace with: <img src="images/bean-1.jpg" alt="Product name" class="product-img-inner" style="object-fit:cover;">
-                </div>
-                <div class="product-info">
-                  <span class="product-category">Ethiopia · Natural</span>
-                  <p class="product-name">Yirgacheffe Kochere</p>
-                  <p class="product-desc">Blueberry · Jasmine · Dark Chocolate</p>
-                  <p class="product-price">NT$ —</p>
-                  <p class="product-note">100g / 200g</p>
-                </div>
-              </div>
-            -->
-
-            <!-- Placeholder cards — replace when product data is ready -->
-            <div class="product-item">
-              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
-              <div class="product-info">
-                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
-                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
-                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
-                <p class="product-price">NT$ —</p>
-              </div>
+          <!-- Kenya Rugi AB · Washed -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2601221000438526.jpg" alt="Kenya Rugi AB" loading="lazy">
             </div>
-            <div class="product-item">
-              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
-              <div class="product-info">
-                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
-                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
-                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
-                <p class="product-price">NT$ —</p>
-              </div>
+            <p class="product-origin">Kenya</p>
+            <p class="product-name">Rugi AB</p>
+            <p class="product-process">Washed</p>
+            <div class="product-footer">
+              <span class="product-price">NT$470<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
             </div>
-            <div class="product-item">
-              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
-              <div class="product-info">
-                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
-                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
-                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
-                <p class="product-price">NT$ —</p>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- ── Drip Bags ───────────────────────────────────── -->
-        <div>
-          <span class="label" data-i18n="shop-cat-drip-label">Drip Bags</span>
-          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-drip-title">Filter Coffee Bags</h2>
-          <div class="shop-grid">
-
-            <div class="product-item">
-              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
-              <div class="product-info">
-                <span class="product-category" data-i18n="shop-drip-label">Drip Bag</span>
-                <p class="product-name" data-i18n="shop-drip-name-placeholder">Drip Bag Name</p>
-                <p class="product-desc" data-i18n="shop-drip-desc-placeholder">Description</p>
-                <p class="product-price">NT$ —</p>
-                <p class="product-note" data-i18n="shop-drip-note">10g × — pcs</p>
-              </div>
+          <!-- Ethiopia Gerba Guji · Washed -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2511080887294495.jpg" alt="Ethiopia Gerba Guji" loading="lazy">
             </div>
-            <div class="product-item">
-              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
-              <div class="product-info">
-                <span class="product-category" data-i18n="shop-drip-label">Drip Bag</span>
-                <p class="product-name" data-i18n="shop-drip-name-placeholder">Drip Bag Name</p>
-                <p class="product-desc" data-i18n="shop-drip-desc-placeholder">Description</p>
-                <p class="product-price">NT$ —</p>
-                <p class="product-note" data-i18n="shop-drip-note">10g × — pcs</p>
-              </div>
+            <p class="product-origin">Ethiopia</p>
+            <p class="product-name">Gerba Guji</p>
+            <p class="product-process">Washed</p>
+            <div class="product-footer">
+              <span class="product-price">NT$750<small>/ 200g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
             </div>
-
           </div>
+
+          <!-- Ecuador Juan Carlos Velez · Natural -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2510010837023276.jpg" alt="Ecuador Juan Carlos Velez" loading="lazy">
+            </div>
+            <p class="product-origin">Ecuador</p>
+            <p class="product-name">Juan Carlos Velez</p>
+            <p class="product-process">Natural</p>
+            <div class="product-footer">
+              <span class="product-price">NT$500<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Costa Rica V&G · Slow Dry Natural -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2505050610895600.jpg" alt="Costa Rica V&G" loading="lazy">
+            </div>
+            <p class="product-origin">Costa Rica</p>
+            <p class="product-name">V＆G</p>
+            <p class="product-process">Slow Dry Natural</p>
+            <div class="product-footer">
+              <span class="product-price">NT$450<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Ethiopia Wate · Anaerobic Natural -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2410170345392353.jpg" alt="Ethiopia Wate" loading="lazy">
+            </div>
+            <p class="product-origin">Ethiopia</p>
+            <p class="product-name">Wate</p>
+            <p class="product-process">Anaerobic Natural</p>
+            <div class="product-footer">
+              <span class="product-price">NT$470<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Kenya Njemu AB · Washed (SOE) -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2601221000305561.jpg" alt="Kenya Njemu AB" loading="lazy">
+            </div>
+            <p class="product-origin">Kenya · SOE</p>
+            <p class="product-name">Njemu AB</p>
+            <p class="product-process">Washed</p>
+            <div class="product-footer">
+              <span class="product-price">NT$470<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Ethiopia Alo · JHW -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2407220303908909.jpg" alt="Ethiopia Alo" loading="lazy">
+            </div>
+            <p class="product-origin">Ethiopia</p>
+            <p class="product-name">Alo</p>
+            <p class="product-process">JHW</p>
+            <div class="product-footer">
+              <span class="product-price">NT$520<small>/ 100g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
         </div>
-
-        <p style="margin-top:4rem;font-size:0.75rem;color:var(--gray-400);text-align:center;letter-spacing:0.06em;" data-i18n="shop-note">
-          Products available in-store. Online ordering coming soon.
-        </p>
-
       </div>
     </section>
+
+    <hr class="shop-divider">
+
+    <!-- ── Drip Bags ─────────────────────────────── -->
+    <section class="shop-section">
+      <div class="container">
+        <span class="label" data-i18n="shop-cat-drip-label">Drip Bags</span>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-drip-title">Filter Coffee Bags</h2>
+
+        <div class="shop-grid">
+
+          <!-- Ecuador Chito Typica · Yeast Washed -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2508200779414480.jpg" alt="Ecuador Chito Typica drip bag" loading="lazy">
+            </div>
+            <p class="product-origin">Ecuador</p>
+            <p class="product-name">Chito Typica</p>
+            <p class="product-process">Yeast Washed</p>
+            <div class="product-footer">
+              <span class="product-price">NT$630<small data-i18n="shop-drip-9pcs">/ 9 pcs</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Panama Lost Origin Bernadina -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2505050610920927.jpg" alt="Panama Bernadina drip bag" loading="lazy">
+            </div>
+            <p class="product-origin">Panama</p>
+            <p class="product-name">Lost Origin Bernadina</p>
+            <p class="product-process" data-i18n="shop-process-beer">Beer Yeast Fermented</p>
+            <div class="product-footer">
+              <span class="product-price">NT$480<small>/ 15g</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Ethiopia Alo · JHW Drip -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2407220303908909.jpg" alt="Ethiopia Alo drip bag" loading="lazy">
+            </div>
+            <p class="product-origin">Ethiopia</p>
+            <p class="product-name">Alo</p>
+            <p class="product-process">JHW</p>
+            <div class="product-footer">
+              <span class="product-price">NT$520<small data-i18n="shop-drip-9pcs">/ 9 pcs</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+          <!-- Combo Drip Bag Box -->
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://myship.7-11.com.tw/i/cgdm/GM2307100859857/2601221000295490.jpg" alt="Combo Drip Bag Box" loading="lazy">
+            </div>
+            <p class="product-origin">Various Origins</p>
+            <p class="product-name">Combo Drip Bag Box</p>
+            <p class="product-process" data-i18n="shop-combo-desc">Curated Selection</p>
+            <div class="product-footer">
+              <span class="product-price">NT$550<small data-i18n="shop-drip-9pcs">/ 9 pcs</small></span>
+              <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" class="product-buy" data-i18n="shop-buy">Buy →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- External note -->
+    <div class="shop-external-note">
+      <p data-i18n="shop-note">Products available in-store and online via 7-ELEVEN MyShip.</p>
+      <p style="margin-top:0.5rem;">
+        <a href="https://myship.7-11.com.tw/general/detail/GM2307100859857" target="_blank" rel="noopener" data-i18n="shop-711-link">Order on 7-ELEVEN MyShip →</a>
+      </p>
+      <p style="margin-top:0.75rem;font-size:0.68rem;" data-i18n="shop-roast-note">Due to roasting schedules, please allow 1–4 weeks for delivery.</p>
+    </div>
+
   </main>
 
   <footer>
