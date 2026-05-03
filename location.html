@@ -1,161 +1,142 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Instil Coffee 中山店 — 地址、營業時間與交通資訊。">
   <title>Location — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="index.html">Instil</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="location.html" class="active">Location</a></li>
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+      <li><a href="about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" class="active" data-i18n="nav-location">Location</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="開啟選單">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-TW">中</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+        <button class="lang-btn" data-lang="ko">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
-  <!-- PAGE HEADER -->
   <header class="page-header">
     <div class="container">
-      <span class="label">Instil Coffee</span>
-      <h1 class="page-header-title">Location</h1>
+      <span class="label" data-i18n="page-label">Instil Coffee</span>
+      <h1 class="page-header-title" data-i18n="page-title-location">Location</h1>
     </div>
   </header>
 
-  <!-- FULL MAP -->
   <div class="full-map">
-    <iframe
-      src="https://maps.google.com/maps?q=25.0521457,121.5183005&z=17&output=embed"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Instil Coffee 中山店地圖">
-    </iframe>
+    <iframe src="https://maps.google.com/maps?q=25.0521457,121.5183005&z=17&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Instil Coffee map"></iframe>
   </div>
 
-  <!-- LOCATION DETAILS -->
   <main>
     <section class="location-details-section">
       <div class="container">
         <div class="location-details-grid">
-
-          <!-- ADDRESS -->
           <div class="address-block">
             <div class="address-item">
-              <span class="label">Address · 地址</span>
-              <p>台北市大同區承德路一段 77 巷 25 號 1 樓</p>
-              <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--gray-400);">
-                No. 25, Ln. 77, Sec. 1, Chengde Rd., Datong Dist., Taipei
-              </p>
+              <span class="label" data-i18n="loc-addr-label">Address</span>
+              <p data-i18n="loc-addr-main">1F, No. 25, Ln. 77, Sec. 1, Chengde Rd., Datong Dist., Taipei</p>
+              <p style="margin-top:0.25rem;font-size:0.8rem;color:var(--gray-400);" data-i18n="loc-addr-sub">No. 25, Ln. 77, Sec. 1, Chengde Rd., Datong Dist., Taipei</p>
             </div>
-
             <div class="address-item">
-              <span class="label">Google Maps</span>
-              <a href="https://maps.app.goo.gl/Csb8eX5deyHFviq27" target="_blank" rel="noopener">
-                開啟 Google Maps →
-              </a>
+              <span class="label" data-i18n="loc-maps-label">Google Maps</span>
+              <a href="https://maps.app.goo.gl/Csb8eX5deyHFviq27" target="_blank" rel="noopener" data-i18n="loc-maps-link">Open Google Maps →</a>
             </div>
-
             <div class="address-item">
-              <span class="label">Instagram</span>
-              <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener">
-                @instilcoffee →
-              </a>
+              <span class="label" data-i18n="loc-ig-label">Instagram</span>
+              <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener">@instilcoffee →</a>
             </div>
-
             <div class="address-item">
-              <span class="label">Services · 服務</span>
-              <p>內用 Dine In　／　外帶 Takeaway　／　外送 Delivery</p>
+              <span class="label" data-i18n="loc-services-label">Services</span>
+              <p data-i18n="loc-services-value">Dine In　／　Takeaway　／　Delivery</p>
             </div>
           </div>
 
-          <!-- HOURS -->
           <div>
-            <span class="label">Hours · 營業時間</span>
-            <div class="hours-table" style="margin-top: 1.5rem;">
+            <span class="label" data-i18n="loc-hours-label">Hours</span>
+            <div class="hours-table" style="margin-top:1.5rem;">
               <div class="hours-row" data-day="monday">
-                <span class="day">Monday · 週一</span>
+                <span class="day" data-i18n="day-monday">Monday</span>
                 <span class="time">09:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="tuesday">
-                <span class="day">Tuesday · 週二</span>
+                <span class="day" data-i18n="day-tuesday">Tuesday</span>
                 <span class="time">09:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="wednesday">
-                <span class="day">Wednesday · 週三</span>
+                <span class="day" data-i18n="day-wednesday">Wednesday</span>
                 <span class="time">09:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="thursday">
-                <span class="day">Thursday · 週四</span>
+                <span class="day" data-i18n="day-thursday">Thursday</span>
                 <span class="time">09:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="friday">
-                <span class="day">Friday · 週五</span>
+                <span class="day" data-i18n="day-friday">Friday</span>
                 <span class="time">09:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="saturday">
-                <span class="day">Saturday · 週六</span>
+                <span class="day" data-i18n="day-saturday">Saturday</span>
                 <span class="time">10:00 – 18:00</span>
               </div>
               <div class="hours-row" data-day="sunday">
-                <span class="day">Sunday · 週日</span>
+                <span class="day" data-i18n="day-sunday">Sunday</span>
                 <span class="time">10:00 – 18:00</span>
               </div>
             </div>
-            <p style="margin-top: 1.25rem; font-size: 0.73rem; color: var(--gray-400); letter-spacing: 0.04em; line-height: 1.6;">
-              特殊節假日營業時間可能異動，請關注 Instagram 最新公告。
+            <p style="margin-top:1.25rem;font-size:0.73rem;color:var(--gray-400);line-height:1.6;" data-i18n="loc-hours-note">
+              Hours may vary on public holidays. Check our Instagram for updates.
             </p>
           </div>
-
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Instil Coffee</div>
-        <p class="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
       </div>
       <div>
-        <span class="footer-col-label">Navigate</span>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
         <ul class="footer-col-links">
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="location.html">Location</a></li>
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer-col-label">Follow</span>
-        <p class="footer-col-text">
-          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener"
-            style="color: var(--gray-400); border-bottom: 1px solid #333; padding-bottom: 2px;">@instilcoffee</a>
-        </p>
-        <div style="margin-top: 2rem;">
-          <span class="footer-col-label">Visit</span>
-          <p class="footer-col-text">台北市大同區<br>承德路一段 77 巷 25 號 1 樓</p>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Instil Coffee. All rights reserved.</span>
-      <span>Taiwan · Taipei · Zhongshan</span>
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ const hero = document.querySelector('.hero');
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 
-// Scroll: transparent nav over hero, solid nav otherwise
+// Nav scroll behavior
 if (hero) {
   const observer = new IntersectionObserver(
     ([entry]) => nav.classList.toggle('scrolled', !entry.isIntersecting),
@@ -30,7 +30,37 @@ links.querySelectorAll('a').forEach(link => {
 });
 
 // Highlight today's hours row
-const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
 const today = days[new Date().getDay()];
 const todayRow = document.querySelector(`.hours-row[data-day="${today}"]`);
 if (todayRow) todayRow.classList.add('today');
+
+// ── i18n ──────────────────────────────────────
+const DEFAULT_LANG = 'en';
+
+function applyLang(lang) {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS[DEFAULT_LANG];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = t[el.getAttribute('data-i18n')];
+    if (v !== undefined) el.textContent = v;
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const v = t[el.getAttribute('data-i18n-html')];
+    if (v !== undefined) el.innerHTML = v;
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang)
+  );
+
+  document.documentElement.lang = lang;
+  localStorage.setItem('instil-lang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn =>
+  btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')))
+);
+
+applyLang(localStorage.getItem('instil-lang') || DEFAULT_LANG);

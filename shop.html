@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Instil Coffee</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    .product-item { display: flex; flex-direction: column; gap: 1rem; }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .product-img-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s var(--ease);
+    }
+    .product-item:hover .product-img-inner { transform: scale(1.04); }
+    .product-info {}
+    .product-category {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .product-name { font-size: 0.9rem; font-weight: 400; margin-bottom: 0.25rem; }
+    .product-desc { font-size: 0.78rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 0.5rem; }
+    .product-price { font-size: 0.85rem; color: var(--gray-800); }
+    .product-note {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      letter-spacing: 0.06em;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 900px) { .shop-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .shop-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="index.html">Instil</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" class="active" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+      <li><a href="about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" data-i18n="nav-location">Location</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-TW">中</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+        <button class="lang-btn" data-lang="ko">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="label" data-i18n="page-label">Instil Coffee</span>
+      <h1 class="page-header-title" data-i18n="page-title-shop">Shop</h1>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+
+        <!-- ── Beans ───────────────────────────────────────── -->
+        <div style="margin-bottom:clamp(48px,8vw,96px);">
+          <span class="label" data-i18n="shop-cat-beans-label">Coffee Beans</span>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-beans-title">Single Origin Beans</h2>
+          <div class="shop-grid">
+
+            <!--
+              Product card template — duplicate and fill in when you have data:
+
+              <div class="product-item">
+                <div class="product-img">
+                  <div class="product-img-inner img-ph"></div>
+                  ↑ Replace with: <img src="images/bean-1.jpg" alt="Product name" class="product-img-inner" style="object-fit:cover;">
+                </div>
+                <div class="product-info">
+                  <span class="product-category">Ethiopia · Natural</span>
+                  <p class="product-name">Yirgacheffe Kochere</p>
+                  <p class="product-desc">Blueberry · Jasmine · Dark Chocolate</p>
+                  <p class="product-price">NT$ —</p>
+                  <p class="product-note">100g / 200g</p>
+                </div>
+              </div>
+            -->
+
+            <!-- Placeholder cards — replace when product data is ready -->
+            <div class="product-item">
+              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
+              <div class="product-info">
+                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
+                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
+                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
+                <p class="product-price">NT$ —</p>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
+              <div class="product-info">
+                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
+                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
+                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
+                <p class="product-price">NT$ —</p>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
+              <div class="product-info">
+                <span class="product-category" data-i18n="shop-origin-placeholder">Origin · Process</span>
+                <p class="product-name" data-i18n="shop-name-placeholder">Bean Name</p>
+                <p class="product-desc" data-i18n="shop-flavor-placeholder">Tasting notes</p>
+                <p class="product-price">NT$ —</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── Drip Bags ───────────────────────────────────── -->
+        <div>
+          <span class="label" data-i18n="shop-cat-drip-label">Drip Bags</span>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem);" data-i18n="shop-cat-drip-title">Filter Coffee Bags</h2>
+          <div class="shop-grid">
+
+            <div class="product-item">
+              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
+              <div class="product-info">
+                <span class="product-category" data-i18n="shop-drip-label">Drip Bag</span>
+                <p class="product-name" data-i18n="shop-drip-name-placeholder">Drip Bag Name</p>
+                <p class="product-desc" data-i18n="shop-drip-desc-placeholder">Description</p>
+                <p class="product-price">NT$ —</p>
+                <p class="product-note" data-i18n="shop-drip-note">10g × — pcs</p>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-img"><div class="product-img-inner img-ph"></div></div>
+              <div class="product-info">
+                <span class="product-category" data-i18n="shop-drip-label">Drip Bag</span>
+                <p class="product-name" data-i18n="shop-drip-name-placeholder">Drip Bag Name</p>
+                <p class="product-desc" data-i18n="shop-drip-desc-placeholder">Description</p>
+                <p class="product-price">NT$ —</p>
+                <p class="product-note" data-i18n="shop-drip-note">10g × — pcs</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <p style="margin-top:4rem;font-size:0.75rem;color:var(--gray-400);text-align:center;letter-spacing:0.06em;" data-i18n="shop-note">
+          Products available in-store. Online ordering coming soon.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Instil Coffee</div>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+      </div>
+      <div>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
+        <ul class="footer-col-links">
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

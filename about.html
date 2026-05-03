@@ -1,142 +1,111 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="關於 Instil Coffee — 品牌故事、理念與團隊。">
   <title>About — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="index.html">Instil</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="location.html">Location</a></li>
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+      <li><a href="about.html" class="active" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" data-i18n="nav-location">Location</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="開啟選單">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-TW">中</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+        <button class="lang-btn" data-lang="ko">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
-  <!-- PAGE HEADER -->
   <header class="page-header">
     <div class="container">
-      <span class="label">Instil Coffee</span>
-      <h1 class="page-header-title">About</h1>
+      <span class="label" data-i18n="page-label">Instil Coffee</span>
+      <h1 class="page-header-title" data-i18n="page-title-about">About</h1>
     </div>
   </header>
 
-  <!-- STORY -->
   <main>
     <section>
       <div class="container">
         <div class="about-story-grid">
           <div class="story-text">
-            <span class="label">Our Story</span>
-            <h2 class="section-title">Where coffee<br>meets intention.</h2>
-            <p class="body-text">
-              <!-- 品牌故事文案待補 -->
-              Instil Coffee was founded with a simple belief: that great coffee is the
-              result of great care. From the sourcing of single-origin beans to the
-              careful calibration of each brew, every cup we serve is the product of
-              intentional choices.
-            </p>
-            <p class="body-text">
-              <!-- 品牌故事文案待補 -->
-              Located in the quiet lanes of Zhongshan, Taipei, our space is designed to
-              be a place of calm in the city — somewhere to slow down, appreciate the
-              craft, and connect with the people around you.
-            </p>
+            <span class="label" data-i18n="about-story-label">Our Story</span>
+            <h2 class="section-title" data-i18n-html="about-story-title">Where coffee<br>meets intention.</h2>
+            <p class="body-text" data-i18n="about-story-body-1">Instil Coffee was founded with a simple belief: that great coffee is the result of great care. From the sourcing of single-origin beans to the careful calibration of each brew, every cup we serve is the product of intentional choices.</p>
+            <p class="body-text" style="margin-top:1.25rem;" data-i18n="about-story-body-2">Located in the quiet lanes of Zhongshan, Taipei, our space is designed to be a place of calm in the city — somewhere to slow down, appreciate the craft, and connect with the people around you.</p>
           </div>
-          <!--
-            Replace with: <img src="images/about-portrait.jpg" alt="Instil Coffee" style="aspect-ratio:3/4; object-fit:cover; width:100%;">
-          -->
-          <div class="img-ph" style="aspect-ratio: 3/4;" aria-label="Brand photo"></div>
+          <div class="img-ph" style="aspect-ratio:3/4;" aria-label="Brand photo"></div>
         </div>
       </div>
     </section>
 
-    <!-- WIDE IMAGE -->
-    <!--
-      Replace with: <img src="images/about-wide.jpg" alt="Instil Coffee space" class="about-wide-img">
-    -->
-    <div class="about-wide-img img-ph" style="margin: 0;" aria-label="Store wide-angle photo"></div>
+    <div class="about-wide-img img-ph" aria-label="Store wide photo"></div>
 
-    <!-- VALUES -->
-    <section style="background: var(--gray-50);">
+    <section style="background:var(--gray-50);">
       <div class="container">
-        <span class="label">Our Values</span>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem;">
+        <span class="label" data-i18n="about-values-label">Our Values</span>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem;">
           <div>
-            <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;">Craft</h3>
-            <p class="body-text">
-              <!-- 價值觀文案待補 -->
-              Every variable matters — temperature, grind size, timing. We pursue
-              precision not for its own sake, but because it produces coffee that speaks.
-            </p>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;margin-bottom:1rem;" data-i18n="about-craft-title">Craft</h3>
+            <p class="body-text" data-i18n="about-craft-body">Every variable matters — temperature, grind size, timing. We pursue precision not for its own sake, but because it produces coffee that speaks.</p>
           </div>
           <div>
-            <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;">Sourcing</h3>
-            <p class="body-text">
-              <!-- 價值觀文案待補 -->
-              We work with farmers and importers who share our commitment to quality and
-              transparency. The story of the bean is part of the story of the cup.
-            </p>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;margin-bottom:1rem;" data-i18n="about-sourcing-title">Sourcing</h3>
+            <p class="body-text" data-i18n="about-sourcing-body">We work with farmers and importers who share our commitment to quality and transparency. The story of the bean is part of the story of the cup.</p>
           </div>
           <div>
-            <h3 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;">Space</h3>
-            <p class="body-text">
-              <!-- 價值觀文案待補 -->
-              A great coffee shop is more than what's in the cup. We design our space and
-              service to make every visit feel considered and unhurried.
-            </p>
+            <h3 style="font-family:var(--font-display);font-size:1.5rem;font-weight:300;margin-bottom:1rem;" data-i18n="about-space-title">Space</h3>
+            <p class="body-text" data-i18n="about-space-body">A great coffee shop is more than what's in the cup. We design our space and service to make every visit feel considered and unhurried.</p>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Instil Coffee</div>
-        <p class="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
       </div>
       <div>
-        <span class="footer-col-label">Navigate</span>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
         <ul class="footer-col-links">
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="location.html">Location</a></li>
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer-col-label">Follow</span>
-        <p class="footer-col-text">
-          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener"
-            style="color: var(--gray-400); border-bottom: 1px solid #333; padding-bottom: 2px;">@instilcoffee</a>
-        </p>
-        <div style="margin-top: 2rem;">
-          <span class="footer-col-label">Visit</span>
-          <p class="footer-col-text">台北市大同區<br>承德路一段 77 巷 25 號 1 樓</p>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Instil Coffee. All rights reserved.</span>
-      <span>Taiwan · Taipei · Zhongshan</span>
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

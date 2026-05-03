@@ -1,189 +1,166 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Instil Coffee — 台北中山精品咖啡，用心沖製每一杯。">
+  <meta name="description" content="Instil Coffee — Specialty coffee in Zhongshan, Taipei.">
   <title>Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="index.html">Instil</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="location.html">Location</a></li>
+      <li><a href="index.html" class="active" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+      <li><a href="about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" data-i18n="nav-location">Location</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="開啟選單">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="zh-TW" aria-label="繁體中文">中</button>
+        <button class="lang-btn" data-lang="ja" aria-label="日本語">日</button>
+        <button class="lang-btn" data-lang="ko" aria-label="한국어">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <!--
-      Hero background: replace the div below with:
-      <img src="images/hero.jpg" alt="" class="hero-bg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45;">
-    -->
     <div class="hero-bg img-ph"></div>
     <div class="hero-content">
-      <span class="hero-eyebrow">Taipei · 中山</span>
+      <span class="hero-eyebrow" data-i18n="hero-eyebrow">Taipei · Zhongshan</span>
       <h1 class="hero-title">INSTIL<br>COFFEE</h1>
       <div class="hero-divider"></div>
-      <p class="hero-sub">Specialty Coffee, Thoughtfully Crafted</p>
+      <p class="hero-sub" data-i18n="hero-sub">Specialty Coffee, Thoughtfully Crafted</p>
     </div>
     <div class="hero-scroll" aria-hidden="true">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-i18n="hero-scroll">Scroll</span>
     </div>
   </section>
 
-  <!-- ABOUT PREVIEW -->
   <section>
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <span class="label">Our Story</span>
-          <h2 class="section-title">A space<br>for coffee<br>& community.</h2>
-          <p class="body-text">
-            <!-- 品牌故事文案待補 -->
-            Instil Coffee is a specialty coffee shop nestled in the lanes of Zhongshan,
-            Taipei. We believe great coffee is built on intention — from the farmers who
-            grow the beans to the hands that brew each cup.
-          </p>
-          <a href="about.html" class="text-link">Our Story →</a>
+          <span class="label" data-i18n="home-about-label">Our Story</span>
+          <h2 class="section-title" data-i18n-html="home-about-title">A space<br>for coffee<br>& community.</h2>
+          <p class="body-text" data-i18n="home-about-body">Instil Coffee is a specialty coffee shop nestled in the lanes of Zhongshan, Taipei. We believe great coffee is built on intention — from the farmers who grow the beans to the hands that brew each cup.</p>
+          <a href="about.html" class="text-link" data-i18n="home-about-link">Our Story →</a>
         </div>
-        <!--
-          Replace with: <img src="images/about.jpg" alt="Instil Coffee interior" class="about-img">
-        -->
-        <div class="about-img img-ph" aria-label="Store interior photo"></div>
+        <div class="about-img img-ph" aria-label="Store interior"></div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED -->
   <section class="featured-section">
     <div class="container">
-      <span class="label">Highlights</span>
-      <h2 class="section-title">Crafted with intention.</h2>
+      <span class="label" data-i18n="home-feat-label">Highlights</span>
+      <h2 class="section-title" data-i18n="home-feat-title">Crafted with intention.</h2>
       <div class="featured-grid">
         <div class="featured-item">
-          <!--
-            Replace with: <img src="images/featured-1.jpg" alt="Single origin pour over" class="featured-img">
-          -->
-          <div class="featured-img img-ph" aria-label="Coffee photo 1"></div>
-          <p class="featured-caption">Single Origin Pour Over</p>
+          <div class="featured-img img-ph"></div>
+          <p class="featured-caption" data-i18n="home-feat-cap-1">Single Origin Pour Over</p>
         </div>
         <div class="featured-item">
-          <div class="featured-img img-ph" aria-label="Barista photo"></div>
-          <p class="featured-caption">Our Baristas</p>
+          <div class="featured-img img-ph"></div>
+          <p class="featured-caption" data-i18n="home-feat-cap-2">Our Baristas</p>
         </div>
         <div class="featured-item">
-          <div class="featured-img img-ph" aria-label="Space photo"></div>
-          <p class="featured-caption">The Space</p>
+          <div class="featured-img img-ph"></div>
+          <p class="featured-caption" data-i18n="home-feat-cap-3">The Space</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INSTAGRAM -->
   <section class="ig-section">
     <div class="container">
       <div class="ig-header">
         <div>
-          <span class="label">Follow Along</span>
-          <p style="font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 300;">@instilcoffee</p>
+          <span class="label" data-i18n="home-ig-label">Follow Along</span>
+          <p style="font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;">@instilcoffee</p>
         </div>
-        <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" class="text-link" style="margin-top: 0;">Instagram →</a>
+        <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" class="text-link" style="margin-top:0;" data-i18n="home-ig-link">Instagram →</a>
       </div>
-      <!--
-        Replace each div with: <a href="[post URL]" target="_blank"><img src="images/ig-N.jpg" alt="" class="ig-item"></a>
-      -->
       <div class="ig-grid">
-        <div class="ig-item img-ph" aria-label="Instagram photo 1"></div>
-        <div class="ig-item img-ph" aria-label="Instagram photo 2"></div>
-        <div class="ig-item img-ph" aria-label="Instagram photo 3"></div>
-        <div class="ig-item img-ph" aria-label="Instagram photo 4"></div>
-        <div class="ig-item img-ph" aria-label="Instagram photo 5"></div>
-        <div class="ig-item img-ph" aria-label="Instagram photo 6"></div>
+        <div class="ig-item img-ph"></div>
+        <div class="ig-item img-ph"></div>
+        <div class="ig-item img-ph"></div>
+        <div class="ig-item img-ph"></div>
+        <div class="ig-item img-ph"></div>
+        <div class="ig-item img-ph"></div>
       </div>
     </div>
   </section>
 
-  <!-- LOCATION PREVIEW -->
   <section class="location-section">
     <div class="container">
       <div class="location-grid">
         <div class="location-map-embed">
-          <iframe
-            src="https://maps.google.com/maps?q=25.0521457,121.5183005&z=16&output=embed"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Instil Coffee 中山店地圖">
-          </iframe>
+          <iframe src="https://maps.google.com/maps?q=25.0521457,121.5183005&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Instil Coffee map"></iframe>
         </div>
         <div class="location-info">
           <div>
-            <span class="label">Find Us</span>
-            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3.5rem);">中山店</h2>
+            <span class="label" data-i18n="home-loc-label">Find Us</span>
+            <h2 class="section-title" style="font-size:clamp(2rem,4vw,3.5rem);" data-i18n="home-loc-title">Zhongshan</h2>
           </div>
           <div>
-            <span class="info-label">Address</span>
-            <p class="info-value">台北市大同區承德路一段 77 巷 25 號 1 樓</p>
+            <span class="info-label" data-i18n="home-addr-label">Address</span>
+            <p class="info-value" data-i18n="home-addr-value">1F, No. 25, Ln. 77, Sec. 1, Chengde Rd., Datong Dist., Taipei</p>
           </div>
           <div>
-            <span class="info-label">Hours</span>
+            <span class="info-label" data-i18n="home-hours-label">Hours</span>
             <p class="info-value">
-              <strong>Mon – Fri</strong>&ensp;09:00 – 18:00<br>
-              <strong>Sat – Sun</strong>&ensp;10:00 – 18:00
+              <strong data-i18n="home-hours-weekday">Mon – Fri</strong>&ensp;09:00 – 18:00<br>
+              <strong data-i18n="home-hours-weekend">Sat – Sun</strong>&ensp;10:00 – 18:00
             </p>
           </div>
-          <a href="location.html" class="text-link" style="margin-top: 0;">Get Directions →</a>
+          <a href="location.html" class="text-link" style="margin-top:0;" data-i18n="home-loc-link">Get Directions →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Instil Coffee</div>
-        <p class="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
       </div>
       <div>
-        <span class="footer-col-label">Navigate</span>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
         <ul class="footer-col-links">
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="location.html">Location</a></li>
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer-col-label">Follow</span>
-        <p class="footer-col-text">
-          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener"
-            style="color: var(--gray-400); border-bottom: 1px solid #333; padding-bottom: 2px;">@instilcoffee</a>
-        </p>
-        <div style="margin-top: 2rem;">
-          <span class="footer-col-label">Visit</span>
-          <p class="footer-col-text">台北市大同區<br>承德路一段 77 巷 25 號 1 樓</p>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Instil Coffee. All rights reserved.</span>
-      <span>Taiwan · Taipei · Zhongshan</span>
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

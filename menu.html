@@ -1,217 +1,168 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Instil Coffee 菜單 — 精品咖啡、手沖、牛奶咖啡系列。">
   <title>Menu — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Menu-specific styles */
     .menu-section { padding: var(--section-py) var(--px); }
-
-    .menu-category {
-      padding-bottom: clamp(48px, 6vw, 80px);
-      border-bottom: 1px solid var(--gray-100);
-      margin-bottom: clamp(48px, 6vw, 80px);
-    }
-
+    .menu-category { padding-bottom: clamp(48px,6vw,80px); border-bottom: 1px solid var(--gray-100); margin-bottom: clamp(48px,6vw,80px); }
     .menu-category:last-child { border-bottom: none; margin-bottom: 0; }
-
-    .menu-category-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300;
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-category-desc {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-      letter-spacing: 0.06em;
-      margin-bottom: 2.5rem;
-    }
-
-    .menu-items { display: flex; flex-direction: column; gap: 0; }
-
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1.1rem 0;
-      border-bottom: 1px solid var(--gray-100);
-      gap: 2rem;
-    }
-
+    .menu-category-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); font-weight: 300; margin-bottom: 0.4rem; }
+    .menu-category-desc { font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.06em; margin-bottom: 2.5rem; }
+    .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 1.1rem 0; border-bottom: 1px solid var(--gray-100); gap: 2rem; }
     .menu-item-left { flex: 1; }
-
-    .menu-item-name {
-      font-size: 0.9rem;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
-    }
-
-    .menu-item-desc {
-      font-size: 0.78rem;
-      color: var(--gray-400);
-      line-height: 1.5;
-    }
-
-    .menu-item-price {
-      font-size: 0.85rem;
-      color: var(--gray-600);
-      white-space: nowrap;
-    }
+    .menu-item-name { font-size: 0.9rem; font-weight: 400; margin-bottom: 0.2rem; }
+    .menu-item-desc { font-size: 0.78rem; color: var(--gray-400); }
+    .menu-item-price { font-size: 0.85rem; color: var(--gray-600); white-space: nowrap; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="index.html">Instil</a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html" class="active">Menu</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="location.html">Location</a></li>
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" class="active" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+      <li><a href="about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" data-i18n="nav-location">Location</a></li>
     </ul>
-    <button class="nav-toggle" aria-label="開啟選單">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-TW">中</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+        <button class="lang-btn" data-lang="ko">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
-  <!-- PAGE HEADER -->
   <header class="page-header">
     <div class="container">
-      <span class="label">Instil Coffee</span>
-      <h1 class="page-header-title">Menu</h1>
+      <span class="label" data-i18n="page-label">Instil Coffee</span>
+      <h1 class="page-header-title" data-i18n="page-title-menu">Menu</h1>
     </div>
   </header>
 
-  <!-- MENU CONTENT -->
   <main class="menu-section">
     <div class="container">
 
-      <!-- Espresso -->
       <div class="menu-category">
         <span class="label">01</span>
         <h2 class="menu-category-title">Espresso</h2>
-        <p class="menu-category-desc">義式濃縮系列</p>
-        <div class="menu-items">
-          <!-- 菜單品項待補 — 格式範例如下 -->
+        <p class="menu-category-desc" data-i18n="menu-cat-desc-01">Espresso-based drinks</p>
+        <div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Espresso</p>
-              <p class="menu-item-desc">濃縮咖啡</p>
+              <p class="menu-item-desc" data-i18n="menu-item-espresso-desc">Double shot</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Americano</p>
-              <p class="menu-item-desc">美式咖啡</p>
+              <p class="menu-item-desc" data-i18n="menu-item-americano-desc">Espresso with water</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Latte</p>
-              <p class="menu-item-desc">拿鐵</p>
+              <p class="menu-item-desc" data-i18n="menu-item-latte-desc">Espresso with steamed milk</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Cappuccino</p>
-              <p class="menu-item-desc">卡布奇諾</p>
+              <p class="menu-item-desc" data-i18n="menu-item-cappuccino-desc">Espresso with foam</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
         </div>
       </div>
 
-      <!-- Pour Over -->
       <div class="menu-category">
         <span class="label">02</span>
         <h2 class="menu-category-title">Pour Over</h2>
-        <p class="menu-category-desc">手沖單品系列</p>
-        <div class="menu-items">
+        <p class="menu-category-desc" data-i18n="menu-cat-desc-02">Single-origin pour overs</p>
+        <div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Single Origin</p>
-              <p class="menu-item-desc">依當季豆款，品項每週更新</p>
+              <p class="menu-item-desc" data-i18n="menu-item-pourover-desc">Seasonal beans, updated weekly</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
         </div>
       </div>
 
-      <!-- Non-Coffee -->
       <div class="menu-category">
         <span class="label">03</span>
         <h2 class="menu-category-title">Non-Coffee</h2>
-        <p class="menu-category-desc">非咖啡飲品</p>
-        <div class="menu-items">
+        <p class="menu-category-desc" data-i18n="menu-cat-desc-03">Non-coffee beverages</p>
+        <div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Matcha Latte</p>
-              <p class="menu-item-desc">抹茶拿鐵</p>
+              <p class="menu-item-desc" data-i18n="menu-item-matcha-desc">Japanese matcha with milk</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
           <div class="menu-item">
             <div class="menu-item-left">
               <p class="menu-item-name">Hojicha Latte</p>
-              <p class="menu-item-desc">焙茶拿鐵</p>
+              <p class="menu-item-desc" data-i18n="menu-item-hojicha-desc">Roasted green tea with milk</p>
             </div>
             <span class="menu-item-price">— —</span>
           </div>
         </div>
       </div>
 
-      <!-- Note -->
-      <p style="font-size: 0.75rem; color: var(--gray-400); letter-spacing: 0.06em; text-align: center; padding-top: 1rem;">
-        菜單資訊持續更新中，詳細品項與價格以門市為準。
+      <p style="font-size:0.75rem;color:var(--gray-400);letter-spacing:0.06em;text-align:center;padding-top:1rem;" data-i18n="menu-note">
+        Menu is subject to change. Please check with the store for current items and pricing.
       </p>
 
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Instil Coffee</div>
-        <p class="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
       </div>
       <div>
-        <span class="footer-col-label">Navigate</span>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
         <ul class="footer-col-links">
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="location.html">Location</a></li>
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-events">Events</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
         </ul>
       </div>
       <div>
-        <span class="footer-col-label">Follow</span>
-        <p class="footer-col-text">
-          <a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener"
-            style="color: var(--gray-400); border-bottom: 1px solid #333; padding-bottom: 2px;">@instilcoffee</a>
-        </p>
-        <div style="margin-top: 2rem;">
-          <span class="footer-col-label">Visit</span>
-          <p class="footer-col-text">台北市大同區<br>承德路一段 77 巷 25 號 1 樓</p>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Instil Coffee. All rights reserved.</span>
-      <span>Taiwan · Taipei · Zhongshan</span>
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
