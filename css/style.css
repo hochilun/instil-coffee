@@ -69,11 +69,23 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 20px;
+  width: 150px;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  transition: filter 0.4s var(--ease);
+}
+
+.nav.scrolled .nav-logo-img {
+  filter: none;
+  mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -398,12 +410,16 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.42em;
-  text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center 72%;
+  filter: invert(1);
+  mix-blend-mode: lighten;
 }
 
 .footer-tagline {
