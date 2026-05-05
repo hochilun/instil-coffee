@@ -69,23 +69,11 @@ ul { list-style: none; }
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo-img {
-  height: 20px;
-  width: 150px;
-  object-fit: cover;
-  object-position: center 22%;
-  filter: invert(1);
-  mix-blend-mode: screen;
-  transition: filter 0.4s var(--ease);
-}
-
-.nav.scrolled .nav-logo-img {
-  filter: none;
-  mix-blend-mode: multiply;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -182,12 +170,15 @@ ul { list-style: none; }
 }
 
 .hero-logo-mark {
-  width: clamp(220px, 36vw, 380px);
-  height: clamp(200px, 32vw, 340px);
-  object-fit: cover;
-  object-position: center 72%;
+  display: block;
+  width: clamp(200px, 30vw, 300px);
+  height: clamp(160px, 20vw, 200px);
+  background-image: url('../images/instil-logo.png');
+  background-size: 150%;
+  background-position: center 82%;
+  background-repeat: no-repeat;
   filter: invert(1);
-  mix-blend-mode: lighten;
+  mix-blend-mode: screen;
 }
 
 .hero-divider {
