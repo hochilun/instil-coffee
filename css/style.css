@@ -138,11 +138,10 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background: var(--gray-800);
-  opacity: 0.3;
-  /* When adding hero photo:
+  opacity: 0.85;
   background-image: url('../images/hero.jpg');
   background-size: cover;
-  background-position: center; */
+  background-position: center;
 }
 
 .hero-content {
@@ -282,7 +281,9 @@ section { padding: var(--section-py) var(--px); }
 
 .about-img {
   aspect-ratio: 3 / 4;
-  /* background-image: url('../images/about.jpg'); background-size: cover; background-position: center; */
+  background-image: url('../images/about.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 /* ===================================
@@ -303,8 +304,12 @@ section { padding: var(--section-py) var(--px); }
   width: 100%;
   aspect-ratio: 3 / 4;
   transition: transform 0.7s var(--ease);
-  /* background-image: url('../images/featured-N.jpg'); background-size: cover; background-position: center; */
+  background-size: cover;
+  background-position: center;
 }
+.featured-item:nth-child(1) .featured-img { background-image: url('../images/featured-1.jpg'); }
+.featured-item:nth-child(2) .featured-img { background-image: url('../images/featured-2.jpg'); }
+.featured-item:nth-child(3) .featured-img { background-image: url('../images/featured-3.jpg'); }
 
 .featured-item:hover .featured-img { transform: scale(1.04); }
 
@@ -339,8 +344,15 @@ section { padding: var(--section-py) var(--px); }
   overflow: hidden;
   cursor: pointer;
   transition: opacity 0.3s;
-  /* background-image: url('../images/ig-N.jpg'); background-size: cover; background-position: center; */
+  background-size: cover;
+  background-position: center;
 }
+.ig-item:nth-child(1) { background-image: url('../images/ig-1.jpg'); }
+.ig-item:nth-child(2) { background-image: url('../images/ig-2.jpg'); }
+.ig-item:nth-child(3) { background-image: url('../images/ig-3.jpg'); }
+.ig-item:nth-child(4) { background-image: url('../images/ig-4.jpg'); }
+.ig-item:nth-child(5) { background-image: url('../images/ig-5.jpg'); }
+.ig-item:nth-child(6) { background-image: url('../images/ig-6.jpg'); }
 
 .ig-item:hover { opacity: 0.75; }
 
@@ -612,10 +624,18 @@ footer {
 
 .story-text .body-text { margin-bottom: 1.25rem; }
 
+.about-story-photo {
+  background-image: url('../images/about-story.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
 .about-wide-img {
   width: 100%;
   aspect-ratio: 16 / 7;
-  /* background-image: url('../images/about-wide.jpg'); background-size: cover; background-position: center; */
+  background-image: url('../images/about-wide.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .team-grid {
