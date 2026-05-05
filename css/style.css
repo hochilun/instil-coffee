@@ -170,15 +170,9 @@ ul { list-style: none; }
 }
 
 .hero-logo-mark {
-  display: block;
-  width: clamp(200px, 30vw, 300px);
-  height: clamp(160px, 20vw, 200px);
-  background-image: url('../images/instil-logo.png');
-  background-size: 150%;
-  background-position: center 82%;
-  background-repeat: no-repeat;
+  width: clamp(200px, 32vw, 320px);
+  height: auto;
   filter: invert(1);
-  mix-blend-mode: screen;
 }
 
 .hero-divider {
@@ -448,12 +442,9 @@ footer {
 }
 
 .footer-logo-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  object-position: center 72%;
+  width: 90px;
+  height: auto;
   filter: invert(1);
-  mix-blend-mode: lighten;
 }
 
 .footer-tagline {
