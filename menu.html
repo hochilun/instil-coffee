@@ -6,150 +6,46 @@
   <title>Menu — Instil Coffee</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ── Menu layout ── */
-    .menu-section { padding: var(--section-py) var(--px); }
-    .menu-section + .menu-section { padding-top: 0; }
-    .menu-divider { border: none; border-top: 1px solid var(--gray-100); margin: 0 var(--px); }
-
-    /* Category header */
-    .menu-cat-header { margin-bottom: 2.5rem; }
-    .menu-cat-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300;
-      margin-bottom: 0.35rem;
-    }
-    .menu-cat-desc { font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.06em; }
-
-    /* Espresso items — simple row */
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--gray-100);
-      gap: 2rem;
-    }
-    .menu-item-left { flex: 1; }
-    .menu-item-name { font-size: 0.9rem; font-weight: 400; margin-bottom: 0.2rem; }
-    .menu-item-sub { font-size: 0.75rem; color: var(--gray-400); }
-    .menu-item-price { font-size: 0.85rem; color: var(--gray-600); white-space: nowrap; }
-
-    /* Pour-over items — editorial card */
-    .pourover-list { display: flex; flex-direction: column; gap: 0; }
-
-    .pourover-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 1rem 3rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--gray-100);
-      align-items: start;
-    }
-
-    .pourover-origin {
-      font-size: 0.6rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-bottom: 0.4rem;
-    }
-
-    .pourover-name {
-      font-family: var(--font-display);
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 0.3rem;
-    }
-
-    .pourover-process {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--gray-500);
-      margin-bottom: 0.85rem;
-    }
-
-    .pourover-notes {
-      font-size: 0.78rem;
-      color: var(--gray-600);
-      line-height: 1.6;
-    }
-
-    .pourover-notes-en { margin-bottom: 0.2rem; }
-    .pourover-notes-zh { font-size: 0.73rem; color: var(--gray-400); }
-
-    .pourover-prices {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.4rem;
-      padding-top: 0.25rem;
-      white-space: nowrap;
-    }
-
-    .price-row {
-      display: flex;
-      gap: 0.5rem;
-      align-items: baseline;
-    }
-
-    .price-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-    }
-
-    .price-value {
-      font-size: 0.85rem;
-      color: var(--black);
-    }
-
-    /* Price hidden — uncomment to show */
-    .menu-item-price { display: none; }
-    .pourover-prices { display: none; }
-    .pourover-item { grid-template-columns: 1fr; }
-
-    /* ── Menu Visual Section ── */
-    .menu-visual-section {
+    .menu-gallery-section {
       background: var(--black);
-      padding: clamp(64px, 10vw, 120px) var(--px);
+      padding: clamp(64px, 10vw, 120px) var(--px) clamp(80px, 12vw, 140px);
+    }
+
+    .menu-gallery-inner {
+      max-width: 620px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 0;
     }
 
-    .menu-visual-inner {
+    .menu-card {
       width: 100%;
-      max-width: 560px;
-      position: relative;
+      margin: 0;
+      padding: 0;
     }
 
-    .menu-visual-img {
+    .menu-card img {
       width: 100%;
       display: block;
-      /* 黑底圖與黑色背景完全融合 */
       mix-blend-mode: lighten;
     }
 
-    .menu-visual-label {
-      display: block;
-      font-size: 0.58rem;
-      letter-spacing: 0.38em;
+    .menu-card-divider {
+      width: 1px;
+      height: clamp(40px, 6vw, 64px);
+      background: var(--gray-800);
+    }
+
+    .menu-seasonal-note {
+      margin-top: clamp(2rem, 5vw, 3.5rem);
+      font-size: 0.6rem;
+      letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--gray-600);
       text-align: center;
-      margin-top: 2.5rem;
-      line-height: 2;
-    }
-
-    /* Special highlight (Panama, high-end) */
-    .pourover-item.featured { background: var(--gray-50); margin: 0 calc(var(--px) * -1); padding-left: var(--px); padding-right: var(--px); }
-
-    @media (max-width: 640px) {
-      .pourover-item { grid-template-columns: 1fr; gap: 1rem; }
-      .pourover-prices { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+      line-height: 2.2;
     }
   </style>
 </head>
@@ -184,240 +80,32 @@
   </header>
 
   <main>
+    <section class="menu-gallery-section">
+      <div class="menu-gallery-inner">
 
-    <!-- ── Espresso ──────────────────────────────── -->
-    <section class="menu-section">
-      <div class="container">
-        <div class="menu-cat-header">
-          <span class="label">01</span>
-          <h2 class="menu-cat-title">Espresso</h2>
-          <p class="menu-cat-desc" data-i18n="menu-cat-desc-01">Espresso-based drinks</p>
-        </div>
-        <div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Espresso</p>
-              <p class="menu-item-sub" data-i18n="menu-item-espresso-desc">Double shot</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Americano</p>
-              <p class="menu-item-sub" data-i18n="menu-item-americano-desc">Espresso with water</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Latte</p>
-              <p class="menu-item-sub" data-i18n="menu-item-latte-desc">Espresso with steamed milk</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Cappuccino</p>
-              <p class="menu-item-sub" data-i18n="menu-item-cappuccino-desc">Espresso with foam</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-        </div>
-        <p style="margin-top:1.5rem;font-size:0.72rem;color:var(--gray-400);" data-i18n="menu-espresso-note">Full espresso menu available in-store.</p>
-      </div>
-    </section>
+        <figure class="menu-card">
+          <img src="images/menu-espresso.jpg" alt="Espresso Menu" />
+        </figure>
 
-    <hr class="menu-divider">
+        <div class="menu-card-divider"></div>
 
-    <!-- ── Non-Coffee ────────────────────────────── -->
-    <section class="menu-section">
-      <div class="container">
-        <div class="menu-cat-header">
-          <span class="label">02</span>
-          <h2 class="menu-cat-title">Non-Coffee</h2>
-          <p class="menu-cat-desc" data-i18n="menu-cat-desc-03">Non-coffee beverages</p>
-        </div>
-        <div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Matcha Latte</p>
-              <p class="menu-item-sub" data-i18n="menu-item-matcha-desc">Japanese matcha with milk</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-          <div class="menu-item">
-            <div class="menu-item-left">
-              <p class="menu-item-name">Hojicha Latte</p>
-              <p class="menu-item-sub" data-i18n="menu-item-hojicha-desc">Roasted green tea with milk</p>
-            </div>
-            <span class="menu-item-price">— —</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <figure class="menu-card">
+          <img src="images/menu-pour-over.jpg" alt="Pour Over Menu" />
+        </figure>
 
-    <!-- ── Pour Over Menu Visual ─────────────────── -->
-    <section class="menu-visual-section">
-      <div class="menu-visual-inner">
-        <img
-          src="images/menu-pour-over.png"
-          alt="Instil Coffee Pour Over Menu"
-          class="menu-visual-img"
-        />
-      </div>
-      <span class="menu-visual-label">
-        菜單內容會隨季節更換<br>Menu selections change seasonally
-      </span>
-    </section>
+        <div class="menu-card-divider"></div>
 
-    <!-- ── Pour Over ─────────────────────────────── -->
-    <section class="menu-section">
-      <div class="container">
-        <div class="menu-cat-header">
-          <span class="label">03</span>
-          <h2 class="menu-cat-title">Pour Over</h2>
-          <p class="menu-cat-desc" data-i18n="menu-cat-desc-02">Single-origin hand-brewed coffee</p>
-        </div>
+        <figure class="menu-card">
+          <img src="images/menu-seasonal.jpg" alt="Seasonal Special Menu" />
+        </figure>
 
-        <div class="pourover-list">
-
-          <!-- Costa Rica V&G -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Costa Rica</p>
-              <h3 class="pourover-name">V＆G</h3>
-              <p class="pourover-process">Slow Dry Natural</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">cranberry · grape · pineapple</span>
-                <span class="pourover-notes-zh">蔓越莓、葡萄、鳳梨</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$250</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$450</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$700</span></div>
-            </div>
-          </div>
-
-          <!-- Ethiopia Wate -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Ethiopia · 74110 / 74112 / 74SE</p>
-              <h3 class="pourover-name">Wate</h3>
-              <p class="pourover-process">Anaerobic Natural</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">mango · rose · strawberry</span>
-                <span class="pourover-notes-zh">芒果、玫瑰、草莓</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$300</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$470</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$720</span></div>
-            </div>
-          </div>
-
-          <!-- Kenya Rugi AB -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Kenya · SL28 / SL34 / R11</p>
-              <h3 class="pourover-name">Rugi AB</h3>
-              <p class="pourover-process">Washed</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">raspberry · currant · pear</span>
-                <span class="pourover-notes-zh">覆盆子、黑醋栗、梨子</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$300</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$470</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$720</span></div>
-            </div>
-          </div>
-
-          <!-- Ethiopia Gerba Guji -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Ethiopia · Heirloom</p>
-              <h3 class="pourover-name">Gerba Guji</h3>
-              <p class="pourover-process">Washed</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">white flower · tea · orange · peach</span>
-                <span class="pourover-notes-zh">咖啡花、茶感、回甜、水蜜桃</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$300</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$490</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$750</span></div>
-            </div>
-          </div>
-
-          <!-- Ecuador Juan Carlos Velez -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Ecuador · Sidra</p>
-              <h3 class="pourover-name">Juan Carlos Velez</h3>
-              <p class="pourover-process">Natural</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">pineapple · passion fruit · peach · berry</span>
-                <span class="pourover-notes-zh">鳳梨、百香果、桃子、綜合莓果</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$300</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$520</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$820</span></div>
-            </div>
-          </div>
-
-          <!-- Ethiopia Alo -->
-          <div class="pourover-item">
-            <div>
-              <p class="pourover-origin">Ethiopia · 74158</p>
-              <h3 class="pourover-name">Alo</h3>
-              <p class="pourover-process">JH Washed</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">peach · pineapple · blueberry · white flower</span>
-                <span class="pourover-notes-zh">黃桃、鳳梨、藍莓、白花</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$350</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$520</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$870</span></div>
-            </div>
-          </div>
-
-          <!-- Panama Boquate 瑰夏 — featured -->
-          <div class="pourover-item featured">
-            <div>
-              <p class="pourover-origin">Panama · Geisha</p>
-              <h3 class="pourover-name">Boquate 瑰夏</h3>
-              <p class="pourover-process">Natural</p>
-              <p class="pourover-notes">
-                <span class="pourover-notes-en">grape · nectarine · jasmine · mango · bergamot</span>
-                <span class="pourover-notes-zh">葡萄、蜜桃、茉莉、芒果、佛手柑</span>
-              </p>
-            </div>
-            <div class="pourover-prices">
-              <div class="price-row"><span class="price-label" data-i18n="menu-price-cup">Cup</span><span class="price-value">NT$500</span></div>
-              <div class="price-row"><span class="price-label">100g</span><span class="price-value">NT$850</span></div>
-              <div class="price-row"><span class="price-label">200g</span><span class="price-value">NT$1,500</span></div>
-            </div>
-          </div>
-
-        </div>
-
-        <p style="margin-top:2rem;font-size:0.72rem;color:var(--gray-400);line-height:1.8;" data-i18n="menu-pourover-note">
-          菜單內容會隨季節更換，以實際供應為準。<br>
-          Pour over selections change seasonally. Tasting notes are for reference.<br>
-          Beans are lightly roasted — we recommend a 30-day rest after roast date.
+        <p class="menu-seasonal-note">
+          菜單內容會隨季節更換<br>
+          Menu selections change seasonally
         </p>
 
       </div>
     </section>
-
   </main>
 
   <footer>
