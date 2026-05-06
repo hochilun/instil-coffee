@@ -111,6 +111,39 @@
     .pourover-prices { display: none; }
     .pourover-item { grid-template-columns: 1fr; }
 
+    /* ── Menu Visual Section ── */
+    .menu-visual-section {
+      background: var(--black);
+      padding: clamp(64px, 10vw, 120px) var(--px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-visual-inner {
+      width: 100%;
+      max-width: 560px;
+      position: relative;
+    }
+
+    .menu-visual-img {
+      width: 100%;
+      display: block;
+      /* 黑底圖與黑色背景完全融合 */
+      mix-blend-mode: lighten;
+    }
+
+    .menu-visual-label {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gray-600);
+      text-align: center;
+      margin-top: 2.5rem;
+      line-height: 2;
+    }
+
     /* Special highlight (Panama, high-end) */
     .pourover-item.featured { background: var(--gray-50); margin: 0 calc(var(--px) * -1); padding-left: var(--px); padding-right: var(--px); }
 
@@ -223,7 +256,19 @@
       </div>
     </section>
 
-    <hr class="menu-divider">
+    <!-- ── Pour Over Menu Visual ─────────────────── -->
+    <section class="menu-visual-section">
+      <div class="menu-visual-inner">
+        <img
+          src="images/menu-pour-over.png"
+          alt="Instil Coffee Pour Over Menu"
+          class="menu-visual-img"
+        />
+      </div>
+      <span class="menu-visual-label">
+        菜單內容會隨季節更換<br>Menu selections change seasonally
+      </span>
+    </section>
 
     <!-- ── Pour Over ─────────────────────────────── -->
     <section class="menu-section">
@@ -364,7 +409,8 @@
 
         </div>
 
-        <p style="margin-top:2rem;font-size:0.72rem;color:var(--gray-400);line-height:1.7;" data-i18n="menu-pourover-note">
+        <p style="margin-top:2rem;font-size:0.72rem;color:var(--gray-400);line-height:1.8;" data-i18n="menu-pourover-note">
+          菜單內容會隨季節更換，以實際供應為準。<br>
           Pour over selections change seasonally. Tasting notes are for reference.<br>
           Beans are lightly roasted — we recommend a 30-day rest after roast date.
         </p>
