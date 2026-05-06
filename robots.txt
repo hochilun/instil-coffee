@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://instil-coffee.vercel.app/sitemap.xml
