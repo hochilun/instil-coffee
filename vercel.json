@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "instil-coffee.vercel.app"
+        }
+      ],
+      "destination": "https://instilcoffee.com/$1",
+      "permanent": true
+    }
+  ]
+}
