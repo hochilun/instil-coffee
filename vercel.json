@@ -10,6 +10,17 @@
       ],
       "destination": "https://instilcoffee.com/$1",
       "statusCode": 301
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "instil-coffee-hochiluns-projects.vercel.app"
+        }
+      ],
+      "destination": "https://instilcoffee.com/$1",
+      "statusCode": 301
     }
   ]
 }
