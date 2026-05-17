@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anniversary — Instil Coffee</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .anniv-block {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .anniv-block:last-child { border-bottom: none; }
+
+    .anniv-year {
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--gray-100);
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .anniv-teaser .anniv-year { color: var(--black); }
+
+    .anniv-teaser {
+      padding: 5rem 0 4rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .anniv-badge {
+      display: inline-block;
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      border: 1px solid var(--black);
+      padding: 4px 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .anniv-teaser-text {
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--gray-600);
+      max-width: 480px;
+    }
+
+    .anniv-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .anniv-tag {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      border: 1px solid var(--gray-200);
+      padding: 3px 8px;
+    }
+
+    .anniv-tag-nth {
+      border-color: var(--black);
+      color: var(--black);
+    }
+
+    .anniv-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .anniv-partner {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+
+    .anniv-partner a {
+      color: inherit;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .anniv-intro {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: var(--gray-600);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .anniv-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .anniv-item {
+      background: var(--gray-50);
+      padding: 1.5rem;
+    }
+
+    .anniv-item-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.5rem;
+    }
+
+    .anniv-item-name {
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .anniv-item-notes {
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .anniv-item-price {
+      font-size: 0.78rem;
+      color: var(--gray-600);
+    }
+
+    .anniv-detail-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .anniv-detail-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 0.4rem;
+    }
+
+    .anniv-detail-value {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
+
+    @media (max-width: 640px) {
+      .anniv-items { grid-template-columns: 1fr; }
+      .anniv-detail-row { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7KH96YY6Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J7KH96YY6Z');
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="index.html">INSTIL</a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav-home">Home</a></li>
+      <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+      <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+      <li><a href="events.html" data-i18n="nav-ideas">Inspiration</a></li>
+      <li><a href="anniversary.html" class="active" data-i18n="nav-anniversary">Anniversary</a></li>
+      <li><a href="about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="location.html" data-i18n="nav-location">Location</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh-TW">中</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+        <button class="lang-btn" data-lang="ko">한</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="label" data-i18n="page-label">Instil Coffee</span>
+      <h1 class="page-header-title" data-i18n="page-title-anniversary">Anniversary</h1>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+
+        <!-- ── 2026 Teaser ─────────────────────────── -->
+        <div class="anniv-teaser">
+          <div class="anniv-year">2026</div>
+          <span class="anniv-badge" data-i18n="anniv-8th-badge">8th Anniversary · Coming June</span>
+          <p class="anniv-teaser-text" data-i18n="anniv-coming-text">
+            Something new is quietly taking shape. We return every June — a tradition we hold close, and a moment we prepare all year for. Stay tuned.
+          </p>
+        </div>
+
+        <!-- ── Past Anniversaries ─────────────────── -->
+        <div style="margin-top: 4rem;">
+          <span class="label" data-i18n="anniv-past-label">A Record</span>
+
+          <!-- ── 2025 — 7th ── -->
+          <div class="anniv-block">
+            <div class="anniv-year">2025</div>
+            <div class="anniv-meta">
+              <span class="anniv-tag" data-i18n="anniv-tag-anniversary">Anniversary</span>
+              <span class="anniv-tag anniv-tag-nth">7TH</span>
+            </div>
+            <h2 class="anniv-title">Coffee × Wine Pairing Dinner</h2>
+            <p class="anniv-partner">
+              Instil Coffee ✕ <a href="https://www.instagram.com/saku_wine" target="_blank" rel="noopener">@saku_wine</a>
+            </p>
+            <p class="anniv-intro">
+              今年週年活動以不同的方式呈現。精緻餐飲合作的經驗讓我們重新探討咖啡在餐桌上的角色——咖啡通常在飯後才出現，而酒則是搭配餐點的主角。隨著精品咖啡的演變，風味的複雜度與葡萄酒有著異曲同工之妙，我們想嘗試站在侍酒師的角度，用咖啡純粹的風味來搭配餐食。這次邀請 @saku_wine 一起合作，提供葡萄酒及專業知識，由廚師朋友設計餐點。
+            </p>
+            <div style="margin: 2rem 0; border-top: 1px solid var(--gray-100); padding-top: 1.5rem;">
+              <p class="label" style="margin-bottom: 1.25rem;" data-i18n="events-menu-label">Pairing Menu</p>
+              <div style="display:flex;flex-direction:column;gap:0.6rem;">
+                <p style="font-size:0.85rem;color:var(--gray-600);">白蘆筍巴伐露亞 · 蘋果醋 · 薰衣草</p>
+                <p style="font-size:0.85rem;color:var(--gray-600);">酸種佛卡夏</p>
+                <p style="font-size:0.85rem;color:var(--gray-600);">培根 · 咖啡 · 紅酒醋</p>
+                <p style="font-size:0.85rem;color:var(--gray-600);">紅心芭樂 Sorbet</p>
+              </div>
+            </div>
+            <div class="anniv-detail-row" style="margin-bottom:2rem;">
+              <div>
+                <p class="anniv-detail-label" data-i18n="events-detail-venue">Venue</p>
+                <p class="anniv-detail-value">Instil Coffee Zhongshan</p>
+              </div>
+              <div>
+                <p class="anniv-detail-label" data-i18n="events-detail-capacity">Capacity</p>
+                <p class="anniv-detail-value">12 guests per session</p>
+              </div>
+            </div>
+            <a href="https://www.instagram.com/p/DJl2UnwTMBe/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
+          </div>
+
+          <!-- ── 2024 — 6th ── -->
+          <div class="anniv-block">
+            <div class="anniv-year">2024</div>
+            <div class="anniv-meta">
+              <span class="anniv-tag" data-i18n="anniv-tag-anniversary">Anniversary</span>
+              <span class="anniv-tag anniv-tag-nth">6TH</span>
+            </div>
+            <h2 class="anniv-title">La Papaya × Honey Cake</h2>
+            <p class="anniv-partner">
+              Instil Coffee ✕ <a href="https://www.instagram.com/deerdaytw" target="_blank" rel="noopener">@deerdaytw</a>
+            </p>
+            <p class="anniv-intro">
+              六週年選用來自厄瓜多爾的 La Papaya，以其鮮明的花果香氣呈現 SOE 限定品項。同步邀請 @deerdaytw 特製蜂蜜蛋糕作為手沖點單的隱藏搭配——細膩的甜感與咖啡的酸質相互映襯。六月一日至二日限定，每日限量三十份，用餐時間九十分鐘。
+            </p>
+            <div class="anniv-items">
+              <div class="anniv-item">
+                <p class="anniv-item-label">SOE — Ecuador La Papaya</p>
+                <p class="anniv-item-notes">Red Flower · Apple · Cranberry</p>
+                <p class="anniv-item-price">黑咖啡 $250 ／ 牛奶咖啡 $300 ／ 1+1 套餐 $500（每日限量 30 份）</p>
+              </div>
+              <div class="anniv-item">
+                <p class="anniv-item-label" data-i18n="anniv-pourover-exclusive">Pour Over Exclusive</p>
+                <p class="anniv-item-name">Honey Cake</p>
+                <p class="anniv-item-notes">by @deerdaytw · 手沖點單限定搭配</p>
+              </div>
+            </div>
+            <div class="anniv-detail-row" style="margin-bottom:2rem;">
+              <div>
+                <p class="anniv-detail-label" data-i18n="anniv-detail-date">Date</p>
+                <p class="anniv-detail-value">June 1–2, 2024</p>
+              </div>
+              <div>
+                <p class="anniv-detail-label" data-i18n="anniv-detail-limit">Daily Limit</p>
+                <p class="anniv-detail-value">30 套 · 用餐時間 90 分鐘</p>
+              </div>
+            </div>
+            <a href="https://www.instagram.com/p/C7dzXr2v2XY/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
+          </div>
+
+          <!-- ── 2023 — 5th ── -->
+          <div class="anniv-block" style="border-bottom:none;">
+            <div class="anniv-year">2023</div>
+            <div class="anniv-meta">
+              <span class="anniv-tag" data-i18n="anniv-tag-anniversary">Anniversary</span>
+              <span class="anniv-tag anniv-tag-nth">5TH</span>
+            </div>
+            <h2 class="anniv-title">Ethiopia Alo · TIM Series</h2>
+            <p class="anniv-partner">Instil Coffee — Zhongshan</p>
+            <p class="anniv-intro">
+              五週年以我們自家的 TIM（Terroir Intensified Maceration）製程詮釋衣索比亞 Alo 村的 74158 品種，海拔 2500m 以上。水洗與日曬兩種處理方式帶出截然不同的風味面貌，搭配優格葡萄果凍，六月三日至四日限定。
+            </p>
+            <div class="anniv-items">
+              <div class="anniv-item">
+                <p class="anniv-item-label">TIM Washed — 黑咖啡</p>
+                <p class="anniv-item-notes">Lavender · Milk Candy · Earl Grey</p>
+                <p class="anniv-item-price">$200</p>
+              </div>
+              <div class="anniv-item">
+                <p class="anniv-item-label">TIM Natural — 牛奶咖啡</p>
+                <p class="anniv-item-notes">Mango · Grape · Caramelized Butter</p>
+                <p class="anniv-item-price">$250</p>
+              </div>
+            </div>
+            <div style="background:var(--gray-50);padding:1.5rem;margin-bottom:2rem;">
+              <p class="anniv-item-label">1+1 Set</p>
+              <p style="font-size:0.85rem;color:var(--gray-600);margin-top:0.4rem;">TIM Washed + TIM Natural + 優格葡萄果凍</p>
+              <p style="font-size:0.8rem;color:var(--gray-400);margin-top:0.3rem;">$600 · 每日限量</p>
+            </div>
+            <div class="anniv-detail-row" style="margin-bottom:2rem;">
+              <div>
+                <p class="anniv-detail-label" data-i18n="anniv-detail-date">Date</p>
+                <p class="anniv-detail-value">June 3–4, 2023</p>
+              </div>
+              <div>
+                <p class="anniv-detail-label" data-i18n="anniv-detail-limit">Daily Limit</p>
+                <p class="anniv-detail-value">限量 · 用餐時間 90 分鐘</p>
+              </div>
+            </div>
+            <a href="https://www.instagram.com/p/Cs0sKaXvB-b/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="images/instil-logo-graphic.png" alt="Instil Coffee" class="footer-logo-img" /></div>
+        <p class="footer-tagline" data-i18n="footer-tagline">Specialty coffee, thoughtfully crafted in the heart of Zhongshan, Taipei.</p>
+      </div>
+      <div>
+        <span class="footer-col-label" data-i18n="footer-nav-label">Navigate</span>
+        <ul class="footer-col-links">
+          <li><a href="menu.html" data-i18n="nav-menu">Menu</a></li>
+          <li><a href="shop.html" data-i18n="nav-shop">Shop</a></li>
+          <li><a href="events.html" data-i18n="nav-ideas">Inspiration</a></li>
+          <li><a href="anniversary.html" data-i18n="nav-anniversary">Anniversary</a></li>
+          <li><a href="about.html" data-i18n="nav-about">About</a></li>
+          <li><a href="location.html" data-i18n="nav-location">Location</a></li>
+          <li><a href="https://www.ubereats.com/tw/store/instil-coffee-%E4%B8%AD%E5%B1%B1%E5%BA%97/VOpqvfJ0XcKpiCJXI3-vig?diningMode=DELIVERY" target="_blank" rel="noopener" data-i18n="delivery-link">Order on Uber Eats →</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="footer-col-label" data-i18n="footer-follow-label">Follow</span>
+        <p class="footer-col-text"><a href="https://www.instagram.com/instilcoffee" target="_blank" rel="noopener" style="color:var(--gray-400);border-bottom:1px solid #333;padding-bottom:2px;">@instilcoffee</a></p>
+        <div style="margin-top:2rem;">
+          <span class="footer-col-label" data-i18n="footer-visit-label">Visit</span>
+          <p class="footer-col-text" data-i18n-html="footer-address">No. 25, Ln. 77, Sec. 1,<br>Chengde Rd., Taipei</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer-copyright">© 2026 Instil Coffee. All rights reserved.</span>
+      <span data-i18n="footer-region">Taiwan · Taipei · Zhongshan</span>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
