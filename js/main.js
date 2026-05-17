@@ -37,6 +37,18 @@ if (todayRow) todayRow.classList.add('today');
 
 // ── i18n ──────────────────────────────────────
 const DEFAULT_LANG = 'en';
+const SUPPORTED_LANGS = ['en', 'zh-TW', 'ja', 'ko'];
+
+function detectBrowserLang() {
+  const preferred = navigator.languages || [navigator.language];
+  for (const lang of preferred) {
+    if (lang.startsWith('zh')) return 'zh-TW';
+    if (lang.startsWith('ja')) return 'ja';
+    if (lang.startsWith('ko')) return 'ko';
+    if (lang.startsWith('en')) return 'en';
+  }
+  return DEFAULT_LANG;
+}
 
 function applyLang(lang) {
   const t = TRANSLATIONS[lang] || TRANSLATIONS[DEFAULT_LANG];
@@ -63,4 +75,4 @@ document.querySelectorAll('.lang-btn').forEach(btn =>
   btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')))
 );
 
-applyLang(localStorage.getItem('instil-lang') || DEFAULT_LANG);
+applyLang(localStorage.getItem('instil-lang') || detectBrowserLang());
