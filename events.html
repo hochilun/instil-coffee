@@ -63,10 +63,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .idea-partner a {
-      color: inherit;
-      border-bottom: 1px solid var(--gray-200);
-    }
+    .idea-partner a { color: inherit; border-bottom: 1px solid var(--gray-200); }
 
     .idea-body {
       font-size: 0.875rem;
@@ -108,45 +105,18 @@
       line-height: 1.7;
     }
 
-    .course-item {
-      background: var(--gray-50);
-      padding: 1.5rem;
-    }
-
-    .course-num {
-      font-size: 0.58rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-bottom: 0.5rem;
-    }
-
-    .course-title {
-      font-size: 0.88rem;
-      font-weight: 400;
-      margin-bottom: 0.25rem;
-      line-height: 1.4;
-    }
-
-    .course-bean {
-      font-size: 0.72rem;
-      color: var(--gray-400);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.6rem;
-    }
-
-    .course-desc {
-      font-size: 0.78rem;
-      color: var(--gray-600);
-      line-height: 1.7;
-    }
-
     .event-courses {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       margin: 2rem 0;
     }
+
+    .course-item { background: var(--gray-50); padding: 1.5rem; }
+    .course-num { font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.5rem; }
+    .course-title { font-size: 0.88rem; font-weight: 400; margin-bottom: 0.25rem; line-height: 1.4; }
+    .course-bean { font-size: 0.72rem; color: var(--gray-400); letter-spacing: 0.04em; margin-bottom: 0.6rem; }
+    .course-desc { font-size: 0.78rem; color: var(--gray-600); line-height: 1.7; }
 
     @media (max-width: 640px) {
       .idea-materials, .event-courses { grid-template-columns: 1fr; }
@@ -196,19 +166,14 @@
     <section>
       <div class="container">
 
-        <p style="font-size:0.875rem;line-height:1.85;color:var(--gray-400);max-width:600px;margin-bottom:4rem;" data-i18n="ideas-intro">
-          Behind the counter, we are always asking: what if? This page collects those experiments — collaborations, sensory explorations, and one-day ideas that became real.
-        </p>
+        <p style="font-size:0.875rem;line-height:1.85;color:var(--gray-400);max-width:600px;margin-bottom:4rem;" data-i18n="ideas-intro"></p>
 
         <span class="label" data-i18n="ideas-past-label">Moments</span>
 
         <!-- ── March 2025 — Breakfast Project ── -->
         <div class="idea-card" style="padding-top:2rem;">
           <div class="idea-meta">
-            <div class="idea-date">
-              03
-              <span>2025</span>
-            </div>
+            <div class="idea-date">03<span>2025</span></div>
             <span class="idea-tag" data-i18n="events-tag-collab">Collaboration</span>
           </div>
           <h2 class="idea-title">早餐計劃 Breakfast Project</h2>
@@ -216,67 +181,58 @@
             Instil Coffee ✕ <a href="https://www.instagram.com/lilinli_tw" target="_blank" rel="noopener">@lilinli_tw</a>
             ✕ <a href="https://www.instagram.com/wildsolidsourdough.tw" target="_blank" rel="noopener">@wildsolidsourdough.tw</a>
           </p>
-          <p class="idea-body">
-            去年底接到 @lilinli_tw 早餐計劃的邀請，讓團隊既興奮又焦慮。這次是三方品牌合作，考驗著大家的創造力及團隊合作。主要是搭配餐食出杯，使用了四種萃取方式及不同的豆子。考慮到來用餐的客人不一定能喝咖啡，所以只出一款大家熟知樣貌的咖啡作為開場，其餘都是入菜及咖啡特調。
-          </p>
+          <p class="idea-body" data-i18n="ideas-breakfast-intro"></p>
           <div class="event-courses">
             <div class="course-item">
               <p class="course-num">Course 01</p>
-              <p class="course-title">Welcome Drink</p>
+              <p class="course-title" data-i18n="ideas-course-01-title">Welcome Drink</p>
               <p class="course-bean">Ethiopia Mewa · Washed · Cold Brew</p>
-              <p class="course-desc">透過低溫浸泡萃取，保有乾淨度也不失 body 厚度。過濾後第一至第二天香氣表現最佳。</p>
+              <p class="course-desc" data-i18n="ideas-course-01-desc"></p>
             </div>
             <div class="course-item">
               <p class="course-num">Course 02</p>
-              <p class="course-title">沙拉咖啡泡沫</p>
+              <p class="course-title" data-i18n="ideas-course-02-title">Coffee Foam Salad</p>
               <p class="course-bean">Ethiopia Wate · Anaerobic Natural · Pour Over</p>
-              <p class="course-desc">水粉比濃度稍高，利用厭氧製程產生的熱帶水果及發酵風味為沙拉提供鮮味，以泡沫方式呈現放大香氣。</p>
+              <p class="course-desc" data-i18n="ideas-course-02-desc"></p>
             </div>
             <div class="course-item">
               <p class="course-num">Course 03</p>
-              <p class="course-title">通寧茉莉東方美人咖啡</p>
+              <p class="course-title" data-i18n="ideas-course-03-title">Jasmine Cold Tonic Coffee</p>
               <p class="course-bean">Ethiopia Mewa · Washed · Espresso + N₂O</p>
-              <p class="course-desc">義式咖啡為基底，打入 N₂O 製作上層咖啡泡沫放大花香，下層以通寧氣泡水浸泡東方美人茶，帶有茶香與些微奎寧，入口清爽。</p>
+              <p class="course-desc" data-i18n="ideas-course-03-desc"></p>
             </div>
             <div class="course-item">
               <p class="course-num">Course 04</p>
-              <p class="course-title">咖啡奶凍</p>
+              <p class="course-title" data-i18n="ideas-course-04-title">Coffee Panna Cotta</p>
               <p class="course-bean">Honduras Pantanal · Natural · Milk Brew</p>
-              <p class="course-desc">以鮮奶浸泡咖啡粉的 Milk Brew 方式製作，減少水分佔比，呈現更強烈的風味表現。</p>
+              <p class="course-desc" data-i18n="ideas-course-04-desc"></p>
             </div>
           </div>
-          <p class="idea-body" style="margin-top:0;">
-            感謝 @wisechen_lilin 和 Sylvia 的邀請與照顧，兩位創意無限，透過食材將三個品牌完美連結在一起。感謝 @wildsolidsourdough.tw Sunny 和 Ryan 四天備料期間的合作，有相同執著和藝術家性格的人，果然會互相吸引。也希望所有參與這場餐會的來賓都滿意。
-          </p>
+          <p class="idea-body" data-i18n="ideas-breakfast-closing"></p>
           <a href="https://www.instagram.com/p/DHsPxMPzI1W/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
         </div>
 
         <!-- ── August 2024 — 觸感選豆 ── -->
         <div class="idea-card">
           <div class="idea-meta">
-            <div class="idea-date">
-              08
-              <span>2024</span>
-            </div>
+            <div class="idea-date">08<span>2024</span></div>
             <span class="idea-tag" data-i18n="ideas-tag-experiment">Experiment</span>
           </div>
           <h2 class="idea-title">觸感選豆 Tactile Notes</h2>
           <p class="idea-partner">
             Instil Coffee ✕ <a href="https://www.instagram.com/bau_hyphen" target="_blank" rel="noopener">@bau_hyphen</a>
           </p>
-          <p class="idea-body">
-            近期中山店更新單品手沖的介紹方式。我們一直在思考，除了用顏色或味道形容咖啡，還有什麼方式可以幫助客人更直覺地感受不同豆款之間的差異。與 @bau_hyphen 合作，以天然塗料製作兩顆觸感球體——透過觸摸塗料的方式，可以很好去感受和想像舌面上的觸感，進而連結到咖啡的口感與風味。
-          </p>
+          <p class="idea-body" data-i18n="ideas-tactile-intro"></p>
           <div class="idea-materials">
             <div class="idea-material">
               <p class="idea-material-label">Material A</p>
               <p class="idea-material-name">Lime Stucco</p>
-              <p class="idea-material-desc">石灰石粉，光滑細膩，表面如絲，對應清透乾淨、帶有花果酸質的豆款。</p>
+              <p class="idea-material-desc" data-i18n="ideas-material-a-desc"></p>
             </div>
             <div class="idea-material">
               <p class="idea-material-label">Material B</p>
               <p class="idea-material-name">Lime Marmorino</p>
-              <p class="idea-material-desc">含大理石顆粒，啞光帶結構感，對應厚實、帶有果汁感或醇度較高的豆款。</p>
+              <p class="idea-material-desc" data-i18n="ideas-material-b-desc"></p>
             </div>
           </div>
           <a href="https://www.instagram.com/p/C-fOTkGvEBd/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
@@ -285,10 +241,7 @@
         <!-- ── August 2023 — Yuan Daifuku ── -->
         <div class="idea-card">
           <div class="idea-meta">
-            <div class="idea-date">
-              08
-              <span>2023</span>
-            </div>
+            <div class="idea-date">08<span>2023</span></div>
             <span class="idea-tag" data-i18n="ideas-tag-popup">Pop-up</span>
             <span class="idea-tag" data-i18n="events-tag-collab">Collaboration</span>
           </div>
@@ -296,17 +249,15 @@
           <p class="idea-partner">
             Instil Coffee ✕ <a href="https://www.instagram.com/yuan_daifuku" target="_blank" rel="noopener">@yuan_daifuku</a>
           </p>
-          <p class="idea-body">
-            與來自京都風格的大福品牌 @yuan_daifuku 合作，於中山店一日限定快閃。Yuan Daifuku 每日手工製作傳統日式甜點，對原料與工藝有著同樣的執著。那次客人的回饋出乎意料地好，讓我們更相信，不同領域但價值觀相近的人，合作起來特別順。
-          </p>
+          <p class="idea-body" data-i18n="ideas-daifuku-intro"></p>
           <div style="background:var(--gray-50);padding:1.5rem;margin-bottom:2rem;">
-            <p style="font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-400);margin-bottom:0.75rem;">Collaboration Set · $450</p>
+            <p style="font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gray-400);margin-bottom:0.75rem;" data-i18n="ideas-daifuku-combo-label">Collaboration Set</p>
             <div style="display:flex;flex-direction:column;gap:0.5rem;">
-              <p style="font-size:0.85rem;color:var(--gray-600);">黑糖濃縮大福</p>
-              <p style="font-size:0.85rem;color:var(--gray-600);">鳳梨大福</p>
-              <p style="font-size:0.85rem;color:var(--gray-600);">冷萃特調咖啡</p>
+              <p style="font-size:0.85rem;color:var(--gray-600);" data-i18n="ideas-daifuku-item-1">Brown Sugar Espresso Daifuku</p>
+              <p style="font-size:0.85rem;color:var(--gray-600);" data-i18n="ideas-daifuku-item-2">Pineapple Daifuku</p>
+              <p style="font-size:0.85rem;color:var(--gray-600);" data-i18n="ideas-daifuku-item-3">Cold Brew Specialty Drink</p>
             </div>
-            <p style="font-size:0.75rem;color:var(--gray-400);margin-top:0.75rem;">8/12（六）· 12:00–17:00 · 每人最多兩份 · 限量售完為止</p>
+            <p style="font-size:0.75rem;color:var(--gray-400);margin-top:0.75rem;" data-i18n="ideas-daifuku-event-info">Aug 12 (Sat) · 12:00–17:00 · Limited quantities</p>
           </div>
           <a href="https://www.instagram.com/p/Cvmg5WGPe6-/" target="_blank" rel="noopener" class="text-link" style="display:inline-flex;" data-i18n="events-read-more">View on Instagram →</a>
         </div>
