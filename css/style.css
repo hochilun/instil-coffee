@@ -134,14 +134,20 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-.hero-bg {
+.hero-video {
   position: absolute;
   inset: 0;
-  background: var(--gray-800);
-  opacity: 0.85;
-  background-image: url('../images/hero.jpg');
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  z-index: 0;
 }
 
 .hero-content {
@@ -281,9 +287,16 @@ section { padding: var(--section-py) var(--px); }
 
 .about-img {
   aspect-ratio: 3 / 4;
-  background-image: url('../images/about.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ===================================
@@ -625,17 +638,15 @@ footer {
 .story-text .body-text { margin-bottom: 1.25rem; }
 
 .about-story-photo {
-  background-image: url('../images/about-story.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .about-wide-img {
   width: 100%;
   aspect-ratio: 16 / 7;
-  background-image: url('../images/about-wide.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .team-grid {
@@ -836,4 +847,138 @@ footer {
   }
 
   .team-grid { grid-template-columns: 1fr; }
+}
+
+/* ===================================
+   Music Player
+   =================================== */
+.music-player {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  font-family: var(--font-body);
+}
+
+.music-panel {
+  background: var(--black);
+  color: var(--white);
+  border-radius: 12px;
+  padding: 14px 16px 12px;
+  width: 200px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+}
+
+.music-player.open .music-panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.music-track-name {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.music-ctrl {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+  line-height: 1;
+}
+
+.music-ctrl:hover { opacity: 1; }
+
+.music-ctrl svg { width: 14px; height: 14px; display: block; }
+
+.music-ctrl.music-play-btn svg { width: 18px; height: 18px; }
+
+.music-vol {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 2px;
+  background: var(--gray-800);
+  border-radius: 1px;
+  outline: none;
+  cursor: pointer;
+}
+
+.music-vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.music-vol::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.music-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s var(--ease);
+  flex-shrink: 0;
+}
+
+.music-toggle svg { width: 20px; height: 20px; display: block; }
+
+.music-toggle:hover { opacity: 0.75; }
+
+.music-toggle.playing svg {
+  animation: vinyl-spin 4s linear infinite;
+}
+
+@keyframes vinyl-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .music-player { bottom: 20px; right: 16px; }
+  .music-panel  { width: 180px; }
 }

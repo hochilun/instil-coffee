@@ -55,12 +55,20 @@
             <p class="body-text" data-i18n="about-story-body-1">Instil Coffee was founded with a simple belief: that great coffee is the result of great care. From the sourcing of single-origin beans to the careful calibration of each brew, every cup we serve is the product of intentional choices.</p>
             <p class="body-text" style="margin-top:1.25rem;" data-i18n="about-story-body-2">Located in the quiet lanes of Zhongshan, Taipei, our space is designed to be a place of calm in the city — somewhere to slow down, appreciate the craft, and connect with the people around you.</p>
           </div>
-          <div class="about-story-photo img-ph" style="aspect-ratio:3/4;" aria-label="Brand photo"></div>
+          <div class="about-story-photo" style="aspect-ratio:3/4;" aria-label="Brand photo">
+              <video class="section-video" autoplay loop muted playsinline>
+                <source src="videos/about-story.mp4" type="video/mp4">
+              </video>
+            </div>
         </div>
       </div>
     </section>
 
-    <div class="about-wide-img img-ph" aria-label="Store wide photo"></div>
+    <div class="about-wide-img" aria-label="Store wide photo">
+      <video class="section-video" autoplay loop muted playsinline>
+        <source src="videos/about-wide.mp4" type="video/mp4">
+      </video>
+    </div>
 
     <section style="background:var(--gray-50);">
       <div class="container">
@@ -118,5 +126,33 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Music Player -->
+  <div class="music-player" id="musicPlayer">
+    <div class="music-panel" id="musicPanel">
+      <div class="music-track-name" id="musicTrackName">—</div>
+      <div class="music-controls">
+        <button class="music-ctrl" id="musicPrev" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="19,20 9,12 19,4"/><rect x="5" y="4" width="2" height="16"/></svg>
+        </button>
+        <button class="music-ctrl music-play-btn" id="musicPlayBtn" aria-label="Play / Pause">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+        <button class="music-ctrl" id="musicNext" aria-label="Next track">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,4 15,12 5,20"/><rect x="17" y="4" width="2" height="16"/></svg>
+        </button>
+      </div>
+      <input type="range" class="music-vol" id="musicVol" min="0" max="1" step="0.01" value="0.4">
+    </div>
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="3"/>
+        <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </button>
+  </div>
+  <audio id="bgAudio" preload="none"></audio>
+  <script src="js/audio.js"></script>
 </body>
 </html>
